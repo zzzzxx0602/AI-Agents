@@ -62,12 +62,23 @@ The agent follows the workflow below:
 
 ```text
 fundamental_agent_amzn/
-├── src/                # Core agent logic (data ingestion, ratios, valuation, memo, report)
-├── reports/            # Generated charts, tables, investment memo, and HTML reports
-├── run_demo.py         # One-click runnable demo script
-├── requirements.txt    # Python dependencies
+├── src/
+│   ├── __init__.py        # Package initialisation
+│   ├── agent.py           # Core agent orchestration and workflow control
+│   ├── data.py            # Raw financial data loading and preprocessing
+│   ├── financials.py      # Financial statement construction and aggregation
+│   ├── ratios.py          # Profitability, leverage, and efficiency ratios
+│   ├── altman.py          # Financial risk assessment (Altman Z-score)
+│   ├── pe.py              # Relative valuation using P/E ratio screening
+│   ├── dcf.py             # Intrinsic valuation using a simplified DCF model
+│   ├── memo.py            # Investment memo generation logic
+│   ├── report.py          # HTML report generation and formatting
+│   ├── utils.py           # Shared utility functions
+│   └── script.py          # Internal execution helper
+├── reports/               # Generated tables, investment memo, and HTML reports
+├── run_demo.py            # One-click runnable demo script
+├── requirements.txt       # Python dependencies
 └── README.md
-```
 
 ---
 
