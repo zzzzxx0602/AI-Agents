@@ -1,0 +1,220 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Trade Log</title>
+<style>
+    body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 1200px; margin: 0 auto; padding: 40px; background-color: #f9f9f9; }
+    .container { background: #fff; padding: 40px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 30px; }
+    h1 { margin-top: 0; color: #2c3e50; font-size: 26px; border-bottom: 2px solid #eaeaea; padding-bottom: 15px; }
+    .subtitle { font-size: 16px; color: #7f8c8d; margin-bottom: 30px; }
+    h2 { color: #2980b9; font-size: 20px; margin-top: 35px; padding-bottom: 8px; border-bottom: 1px solid #eee; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; }
+    th, td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #f1f1f1; }
+    th { background-color: #f8f9fa; font-weight: 600; color: #555; position: sticky; top: 0; }
+    .metric-value { font-family: "Menlo", "Consolas", monospace; color: #2c3e50; }
+    .description { color: #888; font-size: 13px; font-style: italic; }
+    .tag { display: inline-block; padding: 4px 10px; border-radius: 12px; font-size: 12px; font-weight: 600; color: #fff; }
+    .tag-green { background-color: #27ae60; }
+    .tag-red { background-color: #c0392b; }
+    .tag-yellow { background-color: #f39c12; color: #fff; }
+    .chart-container { margin-top: 40px; text-align: center; border: 1px solid #eee; padding: 20px; border-radius: 5px; background-color: #fff; }
+    .chart-container img { max-width: 85%; height: auto; }
+    .ai-box { background-color: #f0f4f8; border-left: 4px solid #2980b9; padding: 20px; margin-top: 20px; border-radius: 4px; }
+    .ai-box h3 { margin-top: 0; color: #2980b9; font-size: 18px; }
+    .footer { margin-top: 50px; text-align: center; font-size: 12px; color: #aaa; border-top: 1px solid #eee; padding-top: 20px; }
+    .pnl-pos { color: #27ae60; font-weight: bold; }
+    .pnl-neg { color: #c0392b; font-weight: bold; }
+</style>
+</head><body><div class="container"><h1>Holding Periods Log <span style="float:right; font-size: 16px; color: #999; font-weight: normal;">18 Rounds</span></h1><table><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Entry Date</th>
+      <th>Exit Date</th>
+      <th>Entry Price</th>
+      <th>Exit Price</th>
+      <th>Shares</th>
+      <th>Lev Mult</th>
+      <th>PnL ($)</th>
+      <th>Exit Reason</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2015-01-05</td>
+      <td>2016-02-10</td>
+      <td>$15.11</td>
+      <td>$24.52</td>
+      <td>1,000</td>
+      <td>1.50x</td>
+      <td><span class="pnl-pos">$89,435.83</span></td>
+      <td>Risk Off (Vol/SMA Filter)</td>
+    </tr>
+    <tr>
+      <td>2016-02-11</td>
+      <td>2018-11-20</td>
+      <td>$25.19</td>
+      <td>$74.77</td>
+      <td>1,000</td>
+      <td>1.50x</td>
+      <td><span class="pnl-pos">$421,346.83</span></td>
+      <td>Risk Off (Vol/SMA Filter)</td>
+    </tr>
+    <tr>
+      <td>2018-11-27</td>
+      <td>2018-12-18</td>
+      <td>$79.07</td>
+      <td>$77.57</td>
+      <td>1,000</td>
+      <td>0.46x</td>
+      <td><span class="pnl-neg">$-9,216.23</span></td>
+      <td>Risk Off (Vol/SMA Filter)</td>
+    </tr>
+    <tr>
+      <td>2018-12-19</td>
+      <td>2018-12-20</td>
+      <td>$74.75</td>
+      <td>$73.04</td>
+      <td>1,000</td>
+      <td>0.47x</td>
+      <td><span class="pnl-neg">$-181.54</span></td>
+      <td>Risk Off (Vol/SMA Filter)</td>
+    </tr>
+    <tr>
+      <td>2019-01-03</td>
+      <td>2019-01-04</td>
+      <td>$75.01</td>
+      <td>$78.77</td>
+      <td>1,000</td>
+      <td>0.41x</td>
+      <td><span class="pnl-neg">$-149.52</span></td>
+      <td>Risk Off (Vol/SMA Filter)</td>
+    </tr>
+    <tr>
+      <td>2019-01-07</td>
+      <td>2022-01-21</td>
+      <td>$81.48</td>
+      <td>$142.64</td>
+      <td>1,000</td>
+      <td>1.50x</td>
+      <td><span class="pnl-pos">$385,157.78</span></td>
+      <td>Risk Off (Vol/SMA Filter)</td>
+    </tr>
+    <tr>
+      <td>2022-02-07</td>
+      <td>2022-02-23</td>
+      <td>$157.94</td>
+      <td>$144.83</td>
+      <td>1,000</td>
+      <td>0.37x</td>
+      <td><span class="pnl-neg">$-16,862.31</span></td>
+      <td>Risk Off (Vol/SMA Filter)</td>
+    </tr>
+    <tr>
+      <td>2022-02-25</td>
+      <td>2022-03-04</td>
+      <td>$153.79</td>
+      <td>$145.64</td>
+      <td>1,000</td>
+      <td>0.38x</td>
+      <td><span class="pnl-neg">$-13,889.59</span></td>
+      <td>Risk Off (Vol/SMA Filter)</td>
+    </tr>
+    <tr>
+      <td>2022-03-17</td>
+      <td>2022-04-22</td>
+      <td>$157.24</td>
+      <td>$144.35</td>
+      <td>1,000</td>
+      <td>0.82x</td>
+      <td><span class="pnl-neg">$-51,911.54</span></td>
+      <td>Risk Off (Vol/SMA Filter)</td>
+    </tr>
+    <tr>
+      <td>2022-08-01</td>
+      <td>2022-08-31</td>
+      <td>$135.39</td>
+      <td>$126.77</td>
+      <td>1,000</td>
+      <td>0.69x</td>
+      <td><span class="pnl-neg">$-22,558.87</span></td>
+      <td>Risk Off (Vol/SMA Filter)</td>
+    </tr>
+    <tr>
+      <td>2022-09-08</td>
+      <td>2022-09-16</td>
+      <td>$129.82</td>
+      <td>$123.53</td>
+      <td>1,000</td>
+      <td>0.74x</td>
+      <td><span class="pnl-neg">$-17,656.57</span></td>
+      <td>Risk Off (Vol/SMA Filter)</td>
+    </tr>
+    <tr>
+      <td>2022-10-25</td>
+      <td>2022-10-27</td>
+      <td>$120.60</td>
+      <td>$110.96</td>
+      <td>1,000</td>
+      <td>0.55x</td>
+      <td><span class="pnl-neg">$-20,377.76</span></td>
+      <td>Risk Off (Vol/SMA Filter)</td>
+    </tr>
+    <tr>
+      <td>2023-01-30</td>
+      <td>2023-01-31</td>
+      <td>$100.55</td>
+      <td>$103.13</td>
+      <td>1,000</td>
+      <td>0.69x</td>
+      <td><span class="pnl-neg">$-467.52</span></td>
+      <td>Risk Off (Vol/SMA Filter)</td>
+    </tr>
+    <tr>
+      <td>2023-02-01</td>
+      <td>2023-02-09</td>
+      <td>$105.15</td>
+      <td>$98.24</td>
+      <td>1,000</td>
+      <td>0.68x</td>
+      <td><span class="pnl-neg">$-22,199.06</span></td>
+      <td>Risk Off (Vol/SMA Filter)</td>
+    </tr>
+    <tr>
+      <td>2023-02-14</td>
+      <td>2023-02-17</td>
+      <td>$99.70</td>
+      <td>$97.20</td>
+      <td>1,000</td>
+      <td>0.50x</td>
+      <td><span class="pnl-neg">$-6,731.98</span></td>
+      <td>Risk Off (Vol/SMA Filter)</td>
+    </tr>
+    <tr>
+      <td>2023-03-17</td>
+      <td>2025-04-04</td>
+      <td>$98.95</td>
+      <td>$171.00</td>
+      <td>1,000</td>
+      <td>1.41x</td>
+      <td><span class="pnl-pos">$468,158.43</span></td>
+      <td>Risk Off (Vol/SMA Filter)</td>
+    </tr>
+    <tr>
+      <td>2025-04-10</td>
+      <td>2025-04-16</td>
+      <td>$181.22</td>
+      <td>$174.33</td>
+      <td>1,000</td>
+      <td>0.39x</td>
+      <td><span class="pnl-neg">$-4,299.20</span></td>
+      <td>Risk Off (Vol/SMA Filter)</td>
+    </tr>
+    <tr>
+      <td>2025-04-24</td>
+      <td>2026-01-28</td>
+      <td>$186.54</td>
+      <td>$243.37</td>
+      <td>1,000</td>
+      <td>1.48x</td>
+      <td><span class="pnl-pos">$244,475.10</span></td>
+      <td>Position Open</td>
+    </tr>
+  </tbody>
+</table></table><div class="footer">Generated by AI Quantitative Agent</div></div></body></html>
