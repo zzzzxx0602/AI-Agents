@@ -79,4 +79,5 @@ if __name__ == "__main__":
 
                 print("\n" + "=" * 50)
                 print(f"✅ SUCCESS! Report saved to: {output_file}")
+
                 print("=" * 50)
